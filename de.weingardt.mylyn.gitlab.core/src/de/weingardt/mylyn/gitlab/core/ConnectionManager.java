@@ -1,3 +1,15 @@
+/*
+ * Copyright 2020 verit Informationssysteme GmbH, Europaallee 10,
+ * 67657 Kaiserslautern, Germany, http://www.verit.de.
+ * 
+ * All rights reserved.
+ * 
+ * This product or document is protected by copyright and distributed
+ * under licenses restricting its use, copying, distribution, and
+ * decompilation. No part of this product or documentation may be
+ * reproduced in any form by any means without prior written authorization
+ * of verit Informationssysteme GmbH and its licensors, if any.
+ */
 package de.weingardt.mylyn.gitlab.core;
 
 import java.util.HashMap;
@@ -122,7 +134,7 @@ public class ConnectionManager {
 				projectPath = projectPath.substring(0, projectPath.length() - 4);
 			}
 
-			List<GitlabProject> projects = api.getProjects();
+			List<GitlabProject> projects = api.getMembershipProjects();
 			for(GitlabProject p : projects) {
 				if(p.getPathWithNamespace().equals(projectPath)) {
 					GitlabConnection connection = new GitlabConnection(host, p, token,
